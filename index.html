@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trần Trường Thiên - Cloud Portfolio V2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: #0a192f;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #64ffda;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #64ffda;
+        }
+
+        main {
+            margin-top: 70px;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0a192f;
+            font-size: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #64ffda;
+            color: #0a192f;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0a192f;
+            color: #64ffda;
+            border: 1px solid #64ffda;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            color: white;
+            border-radius: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: #64ffda;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .student-info {
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* About */
+        .about-content {
+            background: #f0f4f8;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: #f0f4f8;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .skill-card h3 {
+            color: #0a192f;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-card li {
+            padding: 0.3rem 0;
+        }
+
+        /* Cloud Solutions */
+        .cloud-section {
+            background: linear-gradient(135deg, #112240 0%, #0a192f 100%);
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .cloud-section h2 {
+            color: #64ffda;
+        }
+
+        .cloud-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .cloud-tag {
+            background: rgba(100, 255, 218, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f0f4f8;
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #0a192f;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech {
+            display: inline-block;
+            background: #64ffda;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0.5rem 0;
+        }
+
+        /* Contact */
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #0a192f;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .back-link {
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #64ffda;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Thiên's Cloud V2</div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#about">Về tôi</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#cloud">Đám mây</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== TRANG CHỦ ===== -->
+        <section id="home" class="hero">
+            <h1>Xin chào, tôi là <span class="highlight">Trần Trường Thiên</span></h1>
+            <p class="tagline">Cloud Architect | DevOps Engineer | Full-stack Developer</p>
+            <p>Đam mê xây dựng hệ thống đám mây hiệu năng cao, bảo mật và tự động hóa.</p>
+            <div style="margin: 1.5rem 0;">
+                <a href="#projects" class="btn">Xem dự án</a>
+                <a href="https://test-e3ookk70e-tranruongthien-sgki21s-projects.vercel.app" class="btn" style="background: transparent; border: 1px solid #64ffda;">← Quay lại Portfolio chính</a>
+            </div>
+            <p class="student-info"><strong>Lớp:</strong> TH29.06 | <strong>MSV:</strong> 2924113196</p>
+        </section>
+
+        <!-- ===== VỀ TÔI ===== -->
+        <section id="about">
+            <h2>📖 Về tôi</h2>
+            <div class="about-content">
+                <p>Mình là <strong>Trần Trường Thiên</strong> (MSV: 2924113196), sinh viên năm cuối lớp <strong>TH29.06</strong>, chuyên ngành Công nghệ thông tin tại <strong>Đại học Kinh doanh và Công nghệ Hà Nội (HUBT)</strong>.</p>
+                <p style="margin-top: 1rem;">Với niềm đam mê điện toán đám mây, mình đã tìm hiểu và triển khai thành công nhiều ứng dụng trên Vercel, AWS. Mục tiêu trở thành Cloud Engineer chuyên nghiệp, góp phần xây dựng nền tảng công nghệ vững chắc cho các doanh nghiệp Việt Nam.</p>
+                <p style="margin-top: 1rem;">📌 <strong>Thành tích:</strong> Hoàn thành đồ án Điện toán đám mây với mô hình CI/CD tự động trên Vercel.</p>
+            </div>
+        </section>
+
+        <!-- ===== KỸ NĂNG ===== -->
+        <section id="skills">
+            <h2>⚙️ Kỹ năng chuyên môn</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>☁️ Cloud Platform</h3>
+                    <ul>
+                        <li>Vercel / Netlify</li>
+                        <li>AWS (EC2, S3, Lambda)</li>
+                        <li>Azure Basic</li>
+                        <li>Google Cloud Platform</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>🛠️ DevOps Tools</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>CI/CD Pipeline</li>
+                        <li>Docker cơ bản</li>
+                        <li>GitHub Actions</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>💻 Development</h3>
+                    <ul>
+                        <li>HTML5 / CSS3 / JS</li>
+                        <li>React.js</li>
+                        <li>Node.js / Express</li>
+                        <li>MongoDB / MySQL</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GIẢI PHÁP ĐÁM MÂY ===== -->
+        <section id="cloud" class="cloud-section">
+            <h2>☁️ Giải pháp Điện toán đám mây</h2>
+            <p>Tận dụng sức mạnh của Serverless và Edge Computing để tối ưu hiệu năng và chi phí.</p>
+            <div class="cloud-features">
+                <span class="cloud-tag">✅ Serverless Architecture</span>
+                <span class="cloud-tag">✅ Edge Computing</span>
+                <span class="cloud-tag">✅ Auto-scaling</span>
+                <span class="cloud-tag">✅ Global CDN</span>
+                <span class="cloud-tag">✅ Bảo mật SSL miễn phí</span>
+                <span class="cloud-tag">✅ CI/CD tích hợp</span>
+            </div>
+            <div style="margin-top: 2rem;">
+                <p>🔥 <strong>Vercel Platform</strong> - Nơi mình triển khai portfolio với tốc độ tải trang < 50ms TTFB và uptime 99.99%.</p>
+            </div>
+        </section>
+
+        <!-- ===== DỰ ÁN ===== -->
+        <section id="projects">
+            <h2>📁 Dự án tiêu biểu</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>🌐 Portfolio trên Vercel (Bài 1)</h3>
+                    <p>Website cá nhân được triển khai với CI/CD tự động từ GitHub, bảo mật HTTPS, tối ưu Lighthouse >90 điểm.</p>
+                    <span class="tech">HTML/CSS · Vercel · Git</span>
+                    <br>
+                    <a href="https://test-e3ookk70e-tranruongthien-sgki21s-projects.vercel.app" style="color: #64ffda;">Xem ngay →</a>
+                </div>
+                <div class="project-card">
+                    <h3>📊 Cloud Cost Calculator</h3>
+                    <p>Công cụ tính chi phí đám mây theo thời gian thực, hỗ trợ AWS EC2 và S3.</p>
+                    <span class="tech">JavaScript · Cloud API</span>
+                    <br>
+                    <a href="#" style="color: #64ffda;">Xem trên GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>🔄 CI/CD Pipeline Demo</h3>
+                    <p>Mô phỏng pipeline tự động build, test, deploy lên Vercel khi push code lên GitHub.</p>
+                    <span class="tech">GitHub Actions · Vercel</span>
+                    <br>
+                    <a href="#" style="color: #64ffda;">Xem demo →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LIÊN HỆ ===== -->
+        <section id="contact">
+            <h2>📞 Liên hệ với tôi</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Họ tên của bạn" required>
+                <input type="email" placeholder="Email của bạn" required>
+                <textarea rows="5" placeholder="Nội dung tin nhắn..."></textarea>
+                <button type="submit" class="btn">Gửi tin nhắn</button>
+            </form>
+            <div class="social-links">
+                <p>📧 Email: trantruongthien9b@gmail.com</p>
+                <p>🐙 GitHub: github.com/trantruongthien-sgki21</p>
+                <p>🔗 LinkedIn: linkedin.com/in/tran-truong-thien</p>
+                <p>📱 MSV: 2924113196 - Lớp TH29.06</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Trần Trường Thiên (MSV: 2924113196 - Lớp TH29.06)</p>
+        <p>Triển khai trên Vercel với CI/CD tự động | Đồ án Điện toán đám mây</p>
+        <div class="back-link">
+            <a href="https://test-ten-xi-22.vercel.app">← Quay lại Portfolio chính (Bài 1)</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrollhttps://test-e3ookk70e-tranruongthien-sgki21s-projects.vercel.app
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Form contact
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('📨 Cảm ơn bạn! Trần Trường Thiên sẽ phản hồi trong thời gian sớm nhất.');
+                form.reset();
+            });
+        }
+
+        console.log('✅ Portfolio V2 - Trần Trường Thiên (TH29.06 - 2924113196)');
+    </script>
+</body>
+</html>
